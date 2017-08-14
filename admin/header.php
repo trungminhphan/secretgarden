@@ -114,9 +114,9 @@ if($users->isLoggedIn() && !$users->is_admin() && !$users->is_manager()){
                         <li class="divider"></li>
                         <li><a href="languages.html">Ngôn ngữ</a></li>
                         <li class="divider"></li>
-                        <li><a href="translates_path.html">Translates path</a></li>
+                        <li><a href="translatepath.html">Translates path</a></li>
                         <li class="divider"></li>
-                        <li><a href="translates_var.html">Translates variable</a></li>
+                        <li><a href="translatevar.html">Translates variable</a></li>
                         <li class="divider"></li>
                     </ul>
                 </li>

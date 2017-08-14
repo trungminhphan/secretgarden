@@ -18,4 +18,10 @@
 		1 => 'Đã duyệt',
 		2 => 'Không duyệt'
 	);
+
+	$var = array(
+		'HOME',
+		'CONTACTS',
+		''
+	);
 ?>
