@@ -139,19 +139,9 @@ $languages_list = $languages->get_all_list();
             $.getJSON(_link, function(data){
                 $("#id").val(data.id);$("#act").val(data.act);
                 $("#code").val(data.code);$("#name").val(data.name);
-                $("#old_icon").val(data.icon);
                 $("#macdinh").html(data.macdinh);FormSliderSwitcher.init();
             });
         });
-        <?php if(isset($msg) && $msg): ?>
-        $.gritter.add({
-            title:"Thông báo !",
-            text:"<?php echo $msg; ?>",
-            image:"assets/img/login.png",
-            sticky:false,
-            time:""
-        });
-        <?php endif; ?>  
         App.init();TableManageDefault.init();
     });
 </script>

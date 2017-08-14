@@ -39,14 +39,14 @@ if(isset($_POST['submit'])){
             $gridfs->id = $old_icon; $gridfs->delete();
         }
         $languages->icon = $icon;
-        $languages->id = $id;
         if($languages->edit()){
             if($url) transfers_to($url);
             else transfers_to('languages.html?msg=Chỉnh sửa thành công');
         } 
     } else {
         if($languages->check_exists_by_code()){
-            transfers_to('languages.html?msg=Ngôn ngữ này đã tồn tại');
+            if($url) transfers_to($url);
+            else transfers_to('languages.html?msg=Ngôn ngữ này đã tồn tại');
         } else {
             if($icon_file) $icon = $gridfs->insert_files();      
             $languages->icon = $icon;
