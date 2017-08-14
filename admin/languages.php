@@ -37,6 +37,24 @@ $languages_list = $languages->get_all_list();
                     </tr>
                 </thead>
                 <tbody>
+                <?php
+                if($languages_list){
+                    $i=1;
+                    foreach($languages_list as $lang){
+                        if($lang['default'] == 1) $default = '<i class="fa fa-check-circle-o text-primary"></i>';
+                        else $default = '';
+                        echo '<tr>';
+                        echo '<td>'.$i.'</td>';
+                        echo '<td class="text-center">'.($lang['icon'] ? '<img src="image.html?id='.$lang['icon'].'" width="32" height="32" />' : '').'</td>';
+                        echo '<td class="text-center">'.$lang['code'].'</td>';
+                        echo '<td>'.$lang['name'].'</td>';
+                        echo '<td class="text-center">'.$default.'</td>';
+                        echo '<td class="text-center"><a href="get.languages.html?id='.$lang['_id'].'&act=edit#modal-languages" data-toggle="modal" class="sualanguages"><i class="fa fa-pencil"></a></td>';
+                        echo '<td class="text-center"><a href="get.languages.html?id='.$lang['_id'].'&act=del" onclick="return confirm(\'Chắc chắn xóa?\');"><i class="fa fa-trash"></a></td>';
+                        echo '</tr>';$i++;
+                    }
+                }
+                ?>
                 </tbody>
             </table>
             </div>
@@ -71,7 +89,7 @@ $languages_list = $languages->get_all_list();
                 <div class="form-group">
                     <label class="col-md-3 control-label">Mặc định</label>
                      <div class="col-md-3" id="macdinh">
-                        <input type="checkbox" data-render="switchery" data-theme="default" name="default" value="1" checked/>
+                        <input type="checkbox" data-render="switchery" data-theme="default" name="default" id="default" value="1" checked/>
                     </div>
                 </div>
                 <div class="form-group">
@@ -113,8 +131,16 @@ $languages_list = $languages->get_all_list();
     $(document).ready(function() {
     	 $(".themlanguages").click(function(){
             $("#id").val("");$("#act").val("");
-            $("#macdinh").html('<input type="checkbox" data-render="switchery" data-theme="default" name="hienthi" value="1" checked/>');
+            $("#macdinh").html('<input type="checkbox" data-render="switchery" data-theme="default" name="default" value="1" checked/>');
             FormSliderSwitcher.init();
+        });
+        $(".sualanguages").click(function(){
+            var _this = $(this); var _link = $(this).attr("href");
+            $.getJSON(_link, function(data){
+                $("#id").val(data.id);$("#act").val(data.act);
+                $("#code").val(data.code);$("#name").val(data.name);
+                $("#macdinh").html(data.macdinh);FormSliderSwitcher.init();
+            });
         });
         App.init();TableManageDefault.init();
     });

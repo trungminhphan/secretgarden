@@ -48,7 +48,7 @@ if(isset($_POST['submit'])){
         if($hinhanh_file) $hinhanh = $gridfs->insert_files();
         if($old_hinhanh && $hinhanh_file){
             $gridfs->id = $old_hinhanh; $gridfs->delete();
-       }
+        }
         $users->hinhanh = $hinhanh;
         if($users->edit()) transfers_to('users.html?msg=Chỉnh sửa thành công');
     } else {

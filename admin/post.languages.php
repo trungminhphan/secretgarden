@@ -1,6 +1,6 @@
 <?php
 require_once('header_none.php');
-$languges = new Languages();
+$languages = new Languages();$gridfs = new GridFS();
 if(isset($_POST['submit'])){
 	$id = isset($_POST['id']) ? $_POST['id'] : '';
     $act = isset($_POST['act']) ? $_POST['act'] : '';
@@ -27,16 +27,39 @@ if(isset($_POST['submit'])){
     }
     $code = isset($_POST['code']) ? $_POST['code'] : '';
     $name = isset($_POST['name']) ? $_POST['name'] : '';
-    $default = isset($_POST['default']) ? $_POST['default'] : '';
+    $default = isset($_POST['default']) ? $_POST['default'] : 0;
+    if($default == 1) $languages->set_non_defalt();
+    $languages->code = $code;
+    $languages->name = $name;
+    $languages->default = $default;
 
-    $languges->code = $code;
-    $languges->name = $name;
-    $languges->icon = $icon;
-    $languges->default = $default;
+    if($id && $act == 'edit'){
+        if($icon_file) $icon = $gridfs->insert_files();
+        if($old_icon && $icon_file){
+            $gridfs->id = $old_icon; $gridfs->delete();
+        }
+        $languages->icon = $icon;
+        if($languages->edit()){
+            if($url) transfers_to($url);
+            else transfers_to('languages.html?msg=Chỉnh sửa thành công');
+        } 
+    } else {
+        if($languages->check_exists_by_code()){
+            if($url) transfers_to($url);
+            else transfers_to('languages.html?msg=Ngôn ngữ này đã tồn tại');
+        } else {
+            if($icon_file) $icon = $gridfs->insert_files();      
+            $languages->icon = $icon;
+            if($languages->insert()){
+                if($url) transfers_to($url);
+                else transfers_to('languages.html?msg=Thêm thành công');
+            } else echo transfers_to('languages.html?msg=Không thể thành công');
+        }
+    }
 
-    if($languges->insert()){
+    /*if($languages->insert()){
     	if($url) transfers_to($url);
     	else transfers_to('languages.html');
-    }
+    }*/
 }
 ?>

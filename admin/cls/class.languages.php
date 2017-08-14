@@ -68,7 +68,7 @@
 	}
 
 	public function check_exists_by_code(){
-		$query = array('code' => new MongoRegex($this->code . '/i'));
+		$query = array('code' => $this->code);
 		$filed = array('_id' => true);
 		$result = $this->_collection->findOne($query);
 		if(isset($result['_id']) && $result['_id']) return true;
