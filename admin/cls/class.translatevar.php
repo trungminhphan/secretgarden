@@ -57,9 +57,9 @@ class TranslateVar{
 
 	public function get_var($var, $lang){
 		$query = array('var' => $var);
-		$result $this->_collection->findOne($query);
+		$result = $this->_collection->findOne($query);
 		if(isset($result['translate'][$lang])) return $result['translate'][$lang];
-		echo return $var;
+		else return $var;
 	}
 }
 ?>

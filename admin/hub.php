@@ -3,6 +3,8 @@ require_once('header.php');
 $hub = new Hub();
 $msg = isset($_GET['msg']) ? $_GET['msg'] : '';
 $t = $hub->get_one();
+$languages = new Languages();
+$language_list = $languages->get_all_list();
 
 if(isset($_POST['submit'])){
     $act = isset($_POST['act']) ? $_POST['act'] : '';
@@ -12,11 +14,12 @@ if(isset($_POST['submit'])){
         $banner_filename = isset($_POST['banner_filename']) ? $_POST['banner_filename'] : '';
         $banner_link = isset($_POST['banner_link']) ? $_POST['banner_link'] : '';
         $banner_name = isset($_POST['banner_name']) ? $_POST['banner_name'] : '';
+        $banner_language = isset($_POST['banner_language']) ? $_POST['banner_language'] : '';
         $banner_address = isset($_POST['banner_address']) ? $_POST['banner_address'] : '';
         $banner_orders = isset($_POST['banner_orders']) ? $_POST['banner_orders'] : '';
         if($banner_aliasname){
             foreach ($banner_aliasname as $key => $value) {
-                array_push($arr_banner, array('filename' => $banner_filename[$key], 'aliasname' => $value,'name' => $banner_name[$key], 'address' => $banner_address[$key], 'link' => $banner_link[$key], 'orders' => $banner_orders[$key]));
+                array_push($arr_banner, array('filename' => $banner_filename[$key], 'aliasname' => $value,'name' => $banner_name[$key], 'address' => $banner_address[$key], 'link' => $banner_link[$key], 'orders' => $banner_orders[$key],'language' => $banner_language[$key]));
             }
         }
         $arr_banner = sort_array_1($arr_banner, 'orders', SORT_ASC);
@@ -62,11 +65,21 @@ if(isset($_POST['submit'])){
                         $orders = isset($banner['orders']) ? $banner['orders'] : 0;
                         $name = isset($banner['name']) ? $banner['name'] : '';
                         $address = isset($banner['address']) ? $banner['address'] : '';
+                        $language = isset($banner['language']) ? $banner['language'] : '';
                         echo '<div class="items form-group">';
                         echo '<div class="col-md-1">
                             <input type="number" class="form-control" name="banner_orders[]" value="'.$orders.'" />
                           </div>';
-                          echo '<div class="col-md-3"><input type="text" name="banner_name[]" class="form-control" placeholder="Tên" value="'.$name.'"></div>';
+                        echo '<div class="col-md-1">';
+                        if($language_list){
+                            echo '<select name="banner_language[]" class="form-control">';
+                            foreach($language_list as $lang){
+                                echo '<option value="'.$lang['code'].'"'.($lang['code']==$language ? ' selected' : '').'>'.$lang['code'].'</option>';
+                            }
+                            echo '</select>';
+                        }
+                        echo '</div>';
+                        echo '<div class="col-md-2"><input type="text" name="banner_name[]" class="form-control" placeholder="Tên" value="'.$name.'"></div>';
                           echo '<div class="col-md-3"><input type="text" name="banner_address[]" class="form-control" placeholder="Địa chỉ" value="'.$address.'"></div>';
                         echo '<div class="col-md-3"><input type="text" name="banner_link[]" value="'.$banner['link'].'" class="form-control" placeholder="Liên kết"></div>';
                         echo '<div class="col-md-2">';

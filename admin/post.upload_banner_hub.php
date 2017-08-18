@@ -1,5 +1,7 @@
 <?php
 require_once('header_none.php');
+$languages = new Languages();
+$language_list = $languages->get_all_list();
 if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST"){
 	if(isset($_FILES['banner_files']['name']) && $_FILES['banner_files']['name']){
 		// Loop $_FILES to exeicute all files
@@ -24,7 +26,16 @@ if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST"){
 		        	echo '<div class="col-md-1">
 		        			<input type="number" class="form-control" name="banner_orders[]" value="0" />
 		        		  </div>';
-		        	echo '<div class="col-md-3"><input type="text" name="banner_name[]" class="form-control" placeholder="Tên"></div>';
+		        	echo '<div class="col-md-1">';
+		        	if($language_list){
+		        		echo '<select name="banner_language[]" class="form-control">';
+		        		foreach($language_list as $lang){
+		        			echo '<option value="'.$lang['code'].'">'.$lang['code'].'</option>';
+		        		}
+		        		echo '</select>';
+		        	}
+		        	echo '</div>';
+		        	echo '<div class="col-md-2"><input type="text" name="banner_name[]" class="form-control" placeholder="Tên"></div>';
 		        	echo '<div class="col-md-3"><input type="text" name="banner_address[]" class="form-control" placeholder="Địa chỉ"></div>';
 		        	echo '<div class="col-md-3"><input type="text" name="banner_link[]" class="form-control" placeholder="Liên kết"></div>';
 		        	echo '<div class="col-md-2">';

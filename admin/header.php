@@ -122,7 +122,26 @@ if($users->isLoggedIn() && !$users->is_admin() && !$users->is_manager()){
                         <li class="divider"></li>
                     </ul>
                 </li>
-                <?php endif; ?>
+                <li>
+                    <a href="menu.html">
+                        <i class="fa fa-list-alt"></i>
+                        <span>MENU</span>
+                    </a>
+                </li>
+                <li class="has-sub">
+	                <a href="#">
+	                	<b class="caret pull-right"></b>
+	                    <i class="fa fa-rss-square"></i>
+	                    <span>TIN TỨC</span>
+	                </a>
+	                 <ul class="sub-menu">
+                        <li class="divider"></li>
+                        <li><a href="danhmuctintuc.html">Danh mục tin tức</a></li>
+                        <li class="divider"></li>
+                        <li><a href="tintuc.html">Tin tức</a></li>
+                        <li class="divider"></li>
+                    </ul>
+                </li>
                 <li class="has-sub">
                     <a href="#">
                         <b class="caret pull-right"></b>
@@ -134,61 +153,7 @@ if($users->isLoggedIn() && !$users->is_admin() && !$users->is_manager()){
                         <li><a href="hub.html">Trang chủ</a></li>
                     </ul>
                 </li>
-                <li class="has-sub">
-                    <a href="#">
-                        <b class="caret pull-right"></b>
-                        <i class="fa fa-cutlery"></i>
-                        <span>SECRET GARDEN 1</span>
-                    </a>
-                    <ul class="sub-menu">
-                        <li class="divider"></li>
-                        <li><a href="hub_index.html">Trang chủ</a></li>
-                    </ul>
-                </li>
-                <li class="has-sub">
-                    <a href="#">
-                        <b class="caret pull-right"></b>
-                        <i class="fa fa-cutlery"></i>
-                        <span>SECRET GARDEN 2</span>
-                    </a>
-                    <ul class="sub-menu">
-                        <li class="divider"></li>
-                        <li><a href="hub_index.html">Trang chủ</a></li>
-                    </ul>
-                </li>
-                <li class="has-sub">
-                    <a href="#">
-                        <b class="caret pull-right"></b>
-                        <i class="fa fa-cutlery"></i>
-                        <span>SECRET GARDEN 3</span>
-                    </a>
-                    <ul class="sub-menu">
-                        <li class="divider"></li>
-                        <li><a href="hub_index.html">Trang chủ</a></li>
-                    </ul>
-                </li>
-                <li class="has-sub">
-                    <a href="#">
-                        <b class="caret pull-right"></b>
-                        <i class="fa fa-cutlery"></i>
-                        <span>SECRET GARDEN 4</span>
-                    </a>
-                    <ul class="sub-menu">
-                        <li class="divider"></li>
-                        <li><a href="hub_index.html">Trang chủ</a></li>
-                    </ul>
-                </li>
-                <li class="has-sub">
-                    <a href="#">
-                        <b class="caret pull-right"></b>
-                        <i class="fa fa-cutlery"></i>
-                        <span>SECRET GARDEN 5</span>
-                    </a>
-                    <ul class="sub-menu">
-                        <li class="divider"></li>
-                        <li><a href="hub_index.html">Trang chủ</a></li>
-                    </ul>
-                </li>
+                <?php endif; ?>
                 <li class="menu-control menu-control-right">
                     <a href="#" data-click="next-menu"><i class="fa fa-angle-right"></i></a>
                 </li>
