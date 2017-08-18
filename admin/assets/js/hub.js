@@ -87,9 +87,9 @@ function upload_video(){
 
 function upload_banner(){
     $(".banner_dinhkem").change(function() {
-      var formData = new FormData($("#bannerform")[0]);
+      var formData = new FormData($("#hubform")[0]);
        $.ajax({
-        url: "post.upload_banner.php", type: "POST",
+        url: "post.upload_banner_hub.php", type: "POST",
         data: formData, async: false,
         success: function(datas) {
             if(datas=='Failed'){

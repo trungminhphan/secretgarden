@@ -46,5 +46,20 @@ class TranslateVar{
 		$condition = array('_id' => new MongoId($this->id));
 		return $this->_collection->update($condition, $query);	
 	}
+
+	public function check_exists($var){
+		$query = array('var' => $var);
+		$field = array('_id' => true);
+		$result = $this->_collection->findOne($query, $field);
+		if(isset($result['_id']) && $result['_id']) return true;
+		else return false;
+	}
+
+	public function get_var($var, $lang){
+		$query = array('var' => $var);
+		$result $this->_collection->findOne($query);
+		if(isset($result['translate'][$lang])) return $result['translate'][$lang];
+		echo return $var;
+	}
 }
 ?>

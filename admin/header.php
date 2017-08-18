@@ -118,6 +118,8 @@ if($users->isLoggedIn() && !$users->is_admin() && !$users->is_manager()){
                         <li class="divider"></li>
                         <li><a href="translatevar.html">Translates variable</a></li>
                         <li class="divider"></li>
+                        <li><a href="sync_vars.html">Sync variable</a></li>
+                        <li class="divider"></li>
                     </ul>
                 </li>
                 <?php endif; ?>
@@ -129,7 +131,7 @@ if($users->isLoggedIn() && !$users->is_admin() && !$users->is_manager()){
                     </a>
                     <ul class="sub-menu">
                         <li class="divider"></li>
-                        <li><a href="hub_index.html">Trang chủ</a></li>
+                        <li><a href="hub.html">Trang chủ</a></li>
                     </ul>
                 </li>
                 <li class="has-sub">

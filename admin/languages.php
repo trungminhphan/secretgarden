@@ -62,7 +62,7 @@ $languages_list = $languages->get_all_list();
     </div>
 </div>
 <div class="modal fade" id="modal-languages">
-<form action="post.languages.html" method="POST" class="form-horizontal" data-parsley-validate="true" name="languagesform" enctype="multipart/form-data">
+<form action="post.languages.html" method="POST" class="form-horizontal" data-parsley-validate="true" name="languagesform">
 	<input type="hidden" name="id" id="id" />
     <input type="hidden" name="act" id="act" />
     <input type="hidden" name="url" id="url" value="<?php echo $_SERVER['REQUEST_URI']; ?>">
@@ -76,7 +76,6 @@ $languages_list = $languages->get_all_list();
                 <div class="form-group">
                     <label class="col-md-3 control-label">Code</label>
                     <div class="col-md-9">
-                        
                         <input type="text" name="code" id="code" value="" class="form-control" data-parsley-required="true"/>
                     </div>
                 </div>
