@@ -22,12 +22,22 @@ class Menu {
         return $this->_collection->find()->sort(array('date_post'=>1));
     }
 
+    public function get_all_list_lang($language){
+        $query = array('language' => $language);
+        return $this->_collection->find($query)->sort(array('date_post'=>1));
+    }
+
     public function get_list_condition($condition){
         return $this->_collection->find($condition)->sort(array('date_post'=>1));
     }
 
     public function get_one(){
         $query = array('_id' => new MongoId($this->id));
+        return $this->_collection->findOne($query);
+    }
+
+    public function get_one_lang($language){
+        $query = array('_id' => new MongoId($this->id), 'language' => $language);
         return $this->_collection->findOne($query);
     }
 

@@ -4,7 +4,15 @@ $languages = new Languages();
 $translatevar = new TranslateVar();
 $languages_list = $languages->get_all_list();
 $var = isset($_GET['var']) ? $_GET['var'] : '';
-$translatevar_list = $translatevar->get_list_condition(array('var' => new MongoRegex('/'.$var.'/i')));
+$arr_query = array();
+array_push($arr_query, array('var' => new MongoRegex('/'.$var.'/i')));
+if($languages_list){
+    foreach($languages_list as $lang){
+        array_push($arr_query, array('translate.'.$lang['code'] => new MongoRegex('/'.$var.'/i')));
+    }
+}
+$query = array('$or' => $arr_query);
+$translatevar_list = $translatevar->get_list_condition($query);
 $msg = isset($_GET['msg']) ? $_GET['msg'] : '';
 
 ?>

@@ -151,6 +151,8 @@ if($users->isLoggedIn() && !$users->is_admin() && !$users->is_manager()){
                     <ul class="sub-menu">
                         <li class="divider"></li>
                         <li><a href="hub.html">Trang chủ</a></li>
+                         <li class="divider"></li>
+                        <li><a href="pages.html">Trang con</a></li>
                     </ul>
                 </li>
                 <?php endif; ?>
