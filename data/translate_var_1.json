@@ -1,0 +1,10 @@
+{"_id":{"$oid":"599a579fa40183fc1500002b"},"var":"TRANG_CHU","translate":{"KH":"Homepage","EN":"Homepage","VN":"Trang chủ"},"date_post":{"$date":"2017-08-21T03:46:39.000Z"}}
+{"_id":{"$oid":"599a579fa40183fc1500002c"},"var":"LIEN_HE","translate":[],"date_post":{"$date":"2017-08-21T03:46:39.000Z"}}
+{"_id":{"$oid":"599a579fa40183fc1500002d"},"var":"GIOI_THIEU","translate":[],"date_post":{"$date":"2017-08-21T03:46:39.000Z"}}
+{"_id":{"$oid":"599a579fa40183fc1500002e"},"var":"DIA_CHI","translate":{"KH":"Top Floor, 158 Pasteur, Bến Nghé, Quận 1, Hồ Chí Minh","EN":"Top Floor, 158 Pasteur, Bến Nghé, Quận 1, Hồ Chí Minh","VN":"Top Floor, 158 Pasteur, Bến Nghé, Quận 1, Hồ Chí Minh"},"date_post":{"$date":"2017-08-21T03:46:39.000Z"}}
+{"_id":{"$oid":"599a579fa40183fc1500002f"},"var":"DIEN_THOAI","translate":{"KH":"0123456789","EN":"0123456789","VN":"0123456789"},"date_post":{"$date":"2017-08-21T03:46:39.000Z"}}
+{"_id":{"$oid":"599a579fa40183fc15000030"},"var":"TEN_NHA_HANG","translate":{"KH":"Secret Garden","EN":"Secret Garden","VN":"Secret Garden"},"date_post":{"$date":"2017-08-21T03:46:39.000Z"}}
+{"_id":{"$oid":"599a579fa40183fc15000031"},"var":"KHAU_HIEU","translate":{"KH":"Tasty - Delicious - Savoury","EN":"Tasty - Delicious - Savoury","VN":"Tasty - Delicious - Savoury"},"date_post":{"$date":"2017-08-21T03:46:39.000Z"}}
+{"_id":{"$oid":"599a58dea40183cc1400002e"},"var":"DESCRIPTION","translate":{"KH":"Secret Garden","EN":"Secret Garden","VN":"Secret Garden"},"date_post":{"$date":"2017-08-21T03:51:58.000Z"}}
+{"_id":{"$oid":"599a835fa40183cc1400002f"},"var":"KEYWORD","translate":{"KH":"Secret Garden","EN":"Secret Garden","VN":"Secret Garden"},"date_post":{"$date":"2017-08-21T06:53:19.000Z"}}
+{"_id":{"$oid":"599a84c1a401839023000034"},"var":"TITLE","translate":{"KH":"Secret Garden","EN":"Secret Garden","VN":"Secret Garden"},"date_post":{"$date":"2017-08-21T06:59:13.000Z"}}

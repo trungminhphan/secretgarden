@@ -1,0 +1,2 @@
+{"_id":{"$oid":"59912148a40183702700002b"},"code":"VN","name":"Tiếng Việt","icon":"599a5857a40183902300002f","default":1,"date_post":{"$date":"2017-08-14T04:04:24.000Z"}}
+{"_id":{"$oid":"599123a6a40183502700002c"},"code":"EN","name":"English","icon":{"$oid":"599a584fa40183cc1400002b"},"default":0,"date_post":{"$date":"2017-08-14T04:14:30.000Z"}}

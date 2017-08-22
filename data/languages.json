@@ -1,0 +1,5 @@
+{"_id":{"$oid":"59912148a40183702700002b"},"code":"VN","name":"Tiếng Việt","icon":"5991458ba401836c2700002a","default":0,"date_post":{"$date":"2017-08-14T04:04:24.000Z"}}
+{"_id":{"$oid":"599123a6a40183502700002c"},"code":"EN","name":"English","icon":"5991444fa401835c2700002c","default":0,"date_post":{"$date":"2017-08-14T04:14:30.000Z"}}
+{"_id":{"$oid":"59915a1ba401836c2700002e"},"code":"KH","name":"Khmer","icon":{"$oid":"59915a1ba401836c2700002c"},"default":0,"date_post":{"$date":"2017-08-14T08:06:51.000Z"}}
+{"_id":{"$oid":"599a4092a401834c1f00002a"},"code":"ENfff","name":"admin","icon":{"$oid":"599a40d8a40183902300002a"},"default":0,"date_post":{"$date":"2017-08-21T02:08:18.000Z"}}
+{"_id":{"$oid":"599a40a0a401839023000029"},"code":"werew","name":"werwer","icon":"","default":1,"date_post":{"$date":"2017-08-21T02:08:32.000Z"}}

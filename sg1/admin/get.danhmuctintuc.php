@@ -1,0 +1,39 @@
+<?php
+require_once('header_none.php');
+$id = isset($_GET['id']) ? $_GET['id'] : '';
+$act = isset($_GET['act']) ? $_GET['act'] : '';
+$language = isset($_GET['language']) ? $_GET['language'] : '';
+$danhmuctintuc = new DanhMucTinTuc();
+
+if($act == 'del' && $id){
+	$danhmuctintuc->id = $id; $dm = $danhmuctintuc->get_one();
+	if($tintuc->check_dmtintuc($id)){
+		transfers_to('danhmuctintuc.html?msg=Không thể xoá, ràng buộc trường dữ liệu các thông tin Tin tức!');
+	} else {
+		if($danhmuctintuc->delete()) transfers_to('danhmuctintuc.html?msg=Xóa thành công!');
+		else transfers_to('danhmuctintuc.html?msg=Không thể xóa, ràng buộc tin tức');
+	}	
+}
+
+if($act == 'edit'){
+	$danhmuctintuc->id = $id; $dm = $danhmuctintuc->get_one();
+	$arr = array(
+		'id' => $id,
+		'act' => $act,
+		'ten' => $dm['ten'],
+		'language' => $dm['language'],
+		'orders' => isset($dm['orders']) ? $dm['orders'] : 0
+	);
+	echo json_encode($arr);
+}
+
+if($act == 'show_select'){
+	$query = array('language' => $language);
+	$danhmuctintuc_list = $danhmuctintuc->get_list_condition($query);
+	if($danhmuctintuc_list){
+		foreach($danhmuctintuc_list as $dm){
+			echo '<option value="'.$dm['_id'].'">'.$dm['ten'].'</option>';
+		}
+	}
+}
+?>

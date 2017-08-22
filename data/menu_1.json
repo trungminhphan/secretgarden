@@ -1,0 +1,8 @@
+{"_id":{"$oid":"599a8828a401834c2000002c"},"ten":"Trang chủ","link":"index.html","id_parent":"","mota":"","language":"VN","orders":0,"date_post":{"$date":"2017-08-21T07:13:44.000Z"}}
+{"_id":{"$oid":"599a883da401834c2000002d"},"ten":"Giới thiệu","link":"gioithieu.html","id_parent":"","mota":"","language":"VN","orders":1,"date_post":{"$date":"2017-08-21T07:14:05.000Z"}}
+{"_id":{"$oid":"599a8857a401834c2000002e"},"ten":"Thực đơn","link":"thucdon.html","id_parent":"","mota":"","language":"VN","orders":2,"date_post":{"$date":"2017-08-21T07:14:31.000Z"}}
+{"_id":{"$oid":"599a887da401834c2000002f"},"ten":"Liên hệ","link":"lienhe.html","id_parent":"","mota":"","language":"VN","orders":4,"date_post":{"$date":"2017-08-21T07:15:09.000Z"}}
+{"_id":{"$oid":"599aa8aca40183fc15000034"},"ten":"Homepage","link":"index.html","id_parent":"","mota":"","language":"EN","orders":0,"date_post":{"$date":"2017-08-21T09:32:28.000Z"}}
+{"_id":{"$oid":"599aa8cca40183fc15000035"},"ten":"Introduction","link":"introduction.html","id_parent":"","mota":"","language":"EN","orders":1,"date_post":{"$date":"2017-08-21T09:33:00.000Z"}}
+{"_id":{"$oid":"599aa8d8a40183fc15000036"},"ten":"Menu","link":"menu.html","id_parent":"","mota":"","language":"EN","orders":2,"date_post":{"$date":"2017-08-21T09:33:12.000Z"}}
+{"_id":{"$oid":"599aa8e9a40183fc15000037"},"ten":"Contact","link":"contact.html","id_parent":"","mota":"","language":"EN","orders":4,"date_post":{"$date":"2017-08-21T09:33:29.000Z"}}

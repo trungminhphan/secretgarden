@@ -1,0 +1,9 @@
+mongoimport --db secretgarden_2 --collection fs.chunks --file fs.chunks_1.json
+mongoimport --db secretgarden_2 --collection fs.files --file fs.files_1.json
+mongoimport --db secretgarden_2 --collection hub --file hub_1.json
+mongoimport --db secretgarden_2 --collection languages --file languages_1.json
+mongoimport --db secretgarden_2 --collection menu --file menu_1.json
+mongoimport --db secretgarden_2 --collection sessions --file sessions_1.json
+mongoimport --db secretgarden_2 --collection translate_path --file translate_path_1.json
+mongoimport --db secretgarden_2 --collection translate_var --file translate_var_1.json
+mongoimport --db secretgarden_2 --collection users --file users_1.json
