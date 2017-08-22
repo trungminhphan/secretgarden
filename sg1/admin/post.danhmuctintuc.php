@@ -10,7 +10,7 @@ $language = isset($_POST['language']) ? $_POST['language'] : '';
 $orders = isset($_POST['orders']) ? $_POST['orders'] : 0;
 
 if(!$id) $id = new MongoId();
-$path = 'tintuc.html?id='.$id;
+$path = 'tin-tuc/'.$id . '/' . vn_to_str($ten);
 $danhmuctintuc->id = $id;
 $danhmuctintuc->ten = $ten;
 $danhmuctintuc->orders = $orders;

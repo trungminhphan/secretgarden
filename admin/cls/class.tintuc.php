@@ -111,6 +111,7 @@ class TinTuc {
 		$query = array('_id' => new MongoId($this->id));
 		return $this->_collection->remove($query);
 	}
+
 }
 
 ?>

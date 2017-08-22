@@ -3,7 +3,7 @@ require_once('header_none.php');
 $id = isset($_GET['id']) ? $_GET['id'] : '';
 $act = isset($_GET['act']) ? $_GET['act'] : '';
 $language = isset($_GET['language']) ? $_GET['language'] : '';
-$danhmuctintuc = new DanhMucTinTuc();
+$danhmuctintuc = new DanhMucTinTuc();$tintuc = new TinTuc();
 
 if($act == 'del' && $id){
 	$danhmuctintuc->id = $id; $dm = $danhmuctintuc->get_one();

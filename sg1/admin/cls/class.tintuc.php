@@ -111,6 +111,15 @@ class TinTuc {
 		$query = array('_id' => new MongoId($this->id));
 		return $this->_collection->remove($query);
 	}
+
+	public function check_dmtintuc($id){
+		$query = array('id_danhmuctintuc' => $id);
+		$field = array('_id' => true);
+		$result = $this->_collection->findOne($query, $field);
+		if(isset($result['_id']) && $result['_id']) return true;
+		else return false;
+
+	}
 }
 
 ?>

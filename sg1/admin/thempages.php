@@ -56,7 +56,7 @@ if(isset($_POST['submit'])){
     $pages->hinhanh = $arr_hinhanh;
     $pages->hienthi = $hienthi;
     $pages->language = $language;
-    $pages->path = 'pages.html?id='.$id;
+    $pages->path = 'trang-tinh/'.$id . vn_to_str($tieude);
     $pages->orders = $orders;
 
     if($language==''){

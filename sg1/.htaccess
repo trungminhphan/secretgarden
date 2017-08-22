@@ -1,10 +1,11 @@
 RewriteEngine on
 Options +FollowSymlinks
 #RewriteBase /
-RewriteRule ^(.+)\.html$ $1.php
+#RewriteRule ^(.+)\.html$ $1.php
 
 #RewriteRule ^index_([0-9]*).html index.php?id=$1
-#RewriteRule ^node/([0-9]*)/page/([0-9]*) index.php?id=$1&page=$2
+RewriteRule ^tin-tuc/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+) tintuc.php?id=$1
+RewriteRule ^chi-tiet-tin-tuc/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+) chitiettintuc.php?id=$1
 
 #RewriteRule ^(.+)\.html$ $1.php
 #RewriteRule ^index-([0-9]+).html$ index.php?id=$1
