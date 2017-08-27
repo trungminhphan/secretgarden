@@ -40,58 +40,83 @@
   <body>
     <div id="pagewrap" class="pagewrap">
       <div id="html-content" class="wrapper-content">
-        <header class="header-transparent">
-          <div class="header-top top-layout-02" style="background:#28A99F;">
-            <div class="container">
-              <div class="topbar-left">
-                <div class="topbar-content">
-                  <div class="item"> 
-                    <div class="wg-contact"><i class="fa fa-map-marker"></i><span>Top Floor, 158 Pasteur, Bến Nghé, Quận 1, Hồ Chí Minh</span></div>
-                  </div>
-                  <div class="item"> 
-                    <div class="wg-contact">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-phone"></i><span>012 987 650</span></div>
-                  </div>
-                </div>
-              </div>
-              <div class="topbar-right">
-                <div class="topbar-content">
-                  <!--<div class="item">
-                    <ul class="socials-nb list-inline wg-social">
-                      <li><a href="javascript:void(0)"><i class="fa fa-facebook"></i></a></li>
-                      <li><a href="javascript:void(0)"><i class="fa fa-twitter"></i></a></li>
-                      <li><a href="javascript:void(0)"><i class="fa fa-pinterest"></i></a></li>
-                      <li><a href="javascript:void(0)"><i class="fa fa-google-plus"></i></a></li>
-                    </ul>
-                  </div>
-                  <div class="item">
-                    <div class="wg-social"><i class="fa fa-user"></i><span>My Account</span></div>
-                  </div>-->
-                </div>
-              </div>
-            </div>
-          </div>
-          <!--<div class="header-main">
-            <div class="container">
-              <div class="open-offcanvas">&#9776;</div>
-              <div class="header-logo">
-                <a href="index.html" class="logo logo-static" height="100">
-                  <img src="assets/images/logo-white.png" alt="Secret Garden" class="logo-img" style="width:350px;">
-                </a>
-                <a href="index.html" class="logo logo-fixed">
-                  <img src="assets/images/logo.png" alt="Secret Garden" class="logo-img" style="width:200px;">
-                </a>
-              </div>
-            </div>
-          </div>-->
-        </header>
-        <section class="featured-section padding-bottom-100" style="background:url('assets/images/slider/slider2-bg1.jpg'); background-size:200%;padding-top:50px;">
-            <div class="container">
+        <section class="featured-section padding-bottom-100" style="background:url('assets/images/bg.jpg'); background-size:cover;padding-top:10px;">
+            <div class="container" style="padding:0px;">
               <div class="row">
                 <div class="col-md-12">
                   <div class="swin-sc swin-sc-title">
                     <img src="assets/images/logo.png" alt="Secret Garden" style="width:350px;">
                   </div>
                   <div class="row">
+                    <div class="col-md-12">
+                      <!--<img src="assets/images/banner.png" width="100%" />-->
+                      <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                          <li data-target="#myCarousel" data-slide-to="1"></li>
+                          <li data-target="#myCarousel" data-slide-to="2"></li>
+                          <li data-target="#myCarousel" data-slide-to="3"></li>
+                          <li data-target="#myCarousel" data-slide-to="4"></li>
+                        </ol>
+                        <div class="carousel-inner">
+                          <div class="item active">
+                            <img src="assets/images/banner-1.png" alt="Secret Garden 1" style="width:100%;">
+                          </div>
+                          <div class="item">
+                            <img src="assets/images/banner-2.png" alt="Secret Garden 2" style="width:100%;">
+                          </div>
+                          <div class="item">
+                            <img src="assets/images/banner-3.png" alt="Secret Garden 3" style="width:100%;">
+                          </div>
+                          <div class="item">
+                            <img src="assets/images/banner-4.png" alt="Secret Garden 4" style="width:100%;">
+                          </div>
+                          <div class="item">
+                            <img src="assets/images/banner-5.png" alt="Secret Garden 5" style="width:100%;">
+                          </div>
+                        </div>
+                         <!-- Left and right controls -->
+                        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                          <span class="glyphicon glyphicon-chevron-left"></span>
+                          <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                          <span class="glyphicon glyphicon-chevron-right"></span>
+                          <span class="sr-only">Next</span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12" style="margin-left:1%;">
+                      <div class="hub-icon hub-icon-1">
+                      <a herf="#">
+                        <img src="assets/images/hub-11.png" width="100%" />
+                      </a>
+                      </div>
+                      <div class="hub-icon hub-icon-2">
+                        <a herf="#">
+                          <img src="assets/images/hub-22.png" width="100%" />
+                        </a>
+                      </div>
+                      <div class="hub-icon hub-icon-3">
+                        <a herf="#">
+                          <img src="assets/images/hub-33.png" width="100%" />
+                        </a>
+                      </div>
+                      <div class="hub-icon hub-icon-4">
+                        <a herf="#">
+                          <img src="assets/images/hub-44.png" width="100%" />
+                        </a>
+                      </div>
+                      <div class="hub-icon hub-icon-5">
+                        <a herf="#">
+                          <img src="assets/images/hub-55.png" width="100%" />
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <!--<div class="row">
                     <div class="col-md-4 col-sm-6 col-xs-12">
                       <div class="swin-sc sc-featured-box item wow fadeInUp"><img src="assets/images/featured-box-bg-1.jpg" alt="fooday" class="box-bg">
                         <div class="box-inner">
@@ -149,7 +174,7 @@
                           </div>
                         </div>
                       </div>
-                    </div>
+                    </div>-->
                     <div class="col-md-2"></div>
                   </div>
                 </div>
@@ -192,5 +217,13 @@
     <script src="assets/js/elements.js"></script>
     <script src="assets/js/widget.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js" integrity="sha384-mE6eXfrb8jxl0rzJDBRanYqgBxtJ6Unn4/1F7q4xRRyIw7Vdg9jP4ycT7x1iVsgb" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $(".hub-icon").mouseover(function(){
+          var index = $(this).index();
+          $('#myCarousel').carousel(index);
+        });
+      });
+    </script>
   </body>
 </html>

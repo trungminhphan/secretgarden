@@ -1227,3 +1227,42 @@ header.header-fixed {
   right: 50%;
   transform: translateX(50%);
   width: 65%; }
+
+.hub-icon{
+  display:inline-block;
+  border:0; width: 19%;
+  position: relative;
+  -webkit-transition: all 200ms ease-in;
+  -webkit-transform: scale(1); 
+  -ms-transition: all 200ms ease-in;
+  -ms-transform: scale(1); 
+  -moz-transition: all 200ms ease-in;
+  -moz-transform: scale(1);
+  transition: all 200ms ease-in;
+  transform: scale(1);   
+  text-align: center;
+  margin-top: 2.5%;
+}
+.hub-icon:hover{
+  border: 0px;padding:0px;
+  box-shadow:  0 0 10px 5px #fbfbb7;
+  -moz-box-shadow: 0 0 10px  5px #fbfbb7;
+  -webkit-box-shadow: 0 0 10px 5px #fbfbb7;
+  -o-box-shadow: 0 0 10px 5px #fbfbb7;
+  -webkit-filter: contrast(120%); 
+  z-index: 2;
+    -webkit-transition: all 200ms ease-in;
+    -webkit-transform: scale(1.2);
+    -ms-transition: all 200ms ease-in;
+    -ms-transform: scale(1.2);   
+    -moz-transition: all 200ms ease-in;
+    -moz-transform: scale(1.2);
+    transition: all 200ms ease-in;
+    transform: scale(1.2);
+    cursor: pointer;
+
+}
+
+.hub-icon-1, .hub-icon-2, .hub-icon-3, .hub-icon-4, .hub-icon-5 {
+  padding: 5px;
+}

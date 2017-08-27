@@ -5,7 +5,10 @@ class Hub {
 	private $_collection;
 
 	public $id = '5996dfce7247aeb00f00002c';
+	public $logo = array();
 	public $banner = array(); //array('orders' 'name', 'address', link, hinhanh);
+	public $icon = array();
+	public $background = array();
 
 	public function __construct(){
 		$this->_mongo = DBConnect::init();
@@ -27,7 +30,10 @@ class Hub {
 
 	public function edit_banner(){
 		$query = array('$set' => array(
-			'banner' => $this->banner
+			'logo' => $this->logo,
+			'banner' => $this->banner,
+			'icon' => $this->icon,
+			'background' => $this->background
 		));
 		$condition = array('_id' => new MongoId($this->id));
 		return $this->_collection->update($condition, $query);
