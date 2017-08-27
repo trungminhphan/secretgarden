@@ -1,10 +1,49 @@
+<?php
+function __autoload($class_name) {
+    require_once('admin/cls/class.' . strtolower($class_name) . '.php');
+}
+$url = $_SERVER['REQUEST_URI'];$a=explode("/", $url);$link=end($a);
+$session = new SessionManager();
+$users = new Users();
+require_once('admin/inc/functions.inc.php');
+require_once('admin/inc/config.inc.php');
+$languages = new Languages();$hub = new Hub();
+$_SESSION['language'] = isset($_GET['lang']) ? $_GET['lang'] : '';
+if(isset($_SESSION['language']) && $_SESSION['language']){
+  $lang = $_SESSION['language'];
+} else {
+  $lang = $languages->get_default();
+  $_SESSION['language'] = $lang;
+}
+
+$logo = '';
+$t = $hub->get_one();
+if(isset($t['logo']) && $t['logo']){
+  foreach($t['logo'] as $l){
+    if($l['language'] == $lang){
+      $logo = $target_images . $l['aliasname'];
+    }
+  }
+}
+if(!$logo) $logo = 'assets/images/logo.png';
+
+$background = '';
+if(isset($t['background']) && $t['background']){
+  foreach($t['background'] as $b){
+    if($b['language'] == $lang){
+      $background = $target_images . $b['aliasname'];
+    }
+  }
+}
+if(!$background) $background = 'assets/images/bg.jpg';
+?>
 <!DOCTYPE html>
 <html lang="en" itemscope itemtype="http://schema.org/WebPage">
   <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Home</title>
+    <title>SECRECT GARDEN</title>
     <!-- Bootstrap CSS-->
     <link href="assets/vendors/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome-->
@@ -40,40 +79,40 @@
   <body>
     <div id="pagewrap" class="pagewrap">
       <div id="html-content" class="wrapper-content">
-        <section class="featured-section padding-bottom-100" style="background:url('assets/images/bg.jpg'); background-size:cover;padding-top:10px;">
+        <section class="featured-section padding-bottom-100" style="background:url(<?php echo $background; ?>); background-size:cover;padding-top:10px;">
             <div class="container" style="padding:0px;">
               <div class="row">
                 <div class="col-md-12">
                   <div class="swin-sc swin-sc-title">
-                    <img src="assets/images/logo.png" alt="Secret Garden" style="width:350px;">
+                    <img src="<?php echo $logo; ?>" alt="Secret Garden" style="width:350px;">
                   </div>
                   <div class="row">
                     <div class="col-md-12">
                       <!--<img src="assets/images/banner.png" width="100%" />-->
+                      <?php if(isset($t['banner']) && $t['banner']) : ?>
                       <div id="myCarousel" class="carousel slide" data-ride="carousel">
                         <ol class="carousel-indicators">
-                          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                          <li data-target="#myCarousel" data-slide-to="1"></li>
-                          <li data-target="#myCarousel" data-slide-to="2"></li>
-                          <li data-target="#myCarousel" data-slide-to="3"></li>
-                          <li data-target="#myCarousel" data-slide-to="4"></li>
+                        <?php
+                          $i = 0;
+                          foreach($t['banner'] as $b){
+                            if($b['language'] == $lang){
+                              echo '<li data-target="#myCarousel" data-slide-to="'.$i.'" '.($i == 0 ? 'class="active"' : '').'></li>';
+                              $i++;
+                            }
+                          }                          
+                        ?>
                         </ol>
                         <div class="carousel-inner">
-                          <div class="item active">
-                            <img src="assets/images/banner-1.png" alt="Secret Garden 1" style="width:100%;">
-                          </div>
-                          <div class="item">
-                            <img src="assets/images/banner-2.png" alt="Secret Garden 2" style="width:100%;">
-                          </div>
-                          <div class="item">
-                            <img src="assets/images/banner-3.png" alt="Secret Garden 3" style="width:100%;">
-                          </div>
-                          <div class="item">
-                            <img src="assets/images/banner-4.png" alt="Secret Garden 4" style="width:100%;">
-                          </div>
-                          <div class="item">
-                            <img src="assets/images/banner-5.png" alt="Secret Garden 5" style="width:100%;">
-                          </div>
+                        <?php
+                        $i=0;
+                        foreach($t['banner'] as $key => $value){
+                          if($value['language'] == $lang){
+                            echo '<div class="item '.($i == 0? 'active' : '').'">
+                              <img src="'.$target_images.$value['aliasname'].'" alt="'.$value['name'].'" style="width:100%;">
+                            </div>';$i++;
+                          }
+                        }
+                        ?>
                         </div>
                          <!-- Left and right controls -->
                         <a class="left carousel-control" href="#myCarousel" data-slide="prev">
@@ -85,37 +124,28 @@
                           <span class="sr-only">Next</span>
                         </a>
                       </div>
+                    <?php endif; ?>
                     </div>
                   </div>
+                  <?php if(isset($t['icon']) && $t['icon']): ?>
                   <div class="row">
                     <div class="col-md-12" style="margin-left:1%;">
-                      <div class="hub-icon hub-icon-1">
-                      <a herf="#">
-                        <img src="assets/images/hub-11.png" width="100%" />
-                      </a>
-                      </div>
-                      <div class="hub-icon hub-icon-2">
-                        <a herf="#">
-                          <img src="assets/images/hub-22.png" width="100%" />
-                        </a>
-                      </div>
-                      <div class="hub-icon hub-icon-3">
-                        <a herf="#">
-                          <img src="assets/images/hub-33.png" width="100%" />
-                        </a>
-                      </div>
-                      <div class="hub-icon hub-icon-4">
-                        <a herf="#">
-                          <img src="assets/images/hub-44.png" width="100%" />
-                        </a>
-                      </div>
-                      <div class="hub-icon hub-icon-5">
-                        <a herf="#">
-                          <img src="assets/images/hub-55.png" width="100%" />
-                        </a>
-                      </div>
+                      <?php
+                      $i=1;
+                      foreach($t['icon'] as $key => $value){
+                        if($value['language'] == $lang){
+                          echo '<div class="hub-icon hub-icon-'.$i.'">
+                          <a href="'.$value['link'].'">
+                            <img src="'.$target_images.$value['aliasname'].'" width="100%" />
+                          </a>
+                          </div>';
+                          $i++;
+                        }
+                      }
+                      ?>
                     </div>
                   </div>
+                  <?php endif; ?>
                   <!--<div class="row">
                     <div class="col-md-4 col-sm-6 col-xs-12">
                       <div class="swin-sc sc-featured-box item wow fadeInUp"><img src="assets/images/featured-box-bg-1.jpg" alt="fooday" class="box-bg">

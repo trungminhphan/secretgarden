@@ -66,6 +66,12 @@
 		$condition = array('_id' => new MongoID($this->id));
 		return $this->_collection->update($condition, $query);
 	}
+	public function get_default(){
+		$query = array('default' => 1);
+		$result = $this->_collection->findOne($query);
+		if(isset($result['code']) && $result['code']) return $result['code'];
+		else return '';
+	}
 
 	public function check_exists_by_code(){
 		$query = array('code' => $this->code);

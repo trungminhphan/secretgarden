@@ -5,6 +5,7 @@
 	define("UPDATER", 4);
 	
 	$uploads_folder = 'uploads/';
+	$target_images = 'uploads/images/';
 	$folder_images_home = '../uploads/images/';
 	
 	$files_extension = array('pdf', 'zip', 'rar', 'doc', 'docx', 'xls', 'png', 'gif', 'jpg', 'jpeg', 'bmp', 'rtf');

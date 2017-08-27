@@ -23,7 +23,50 @@ if(isset($_POST['submit'])){
             }
         }
         $arr_banner = sort_array_1($arr_banner, 'orders', SORT_ASC);
+        $arr_logo = array();
+        $logo_aliasname = isset($_POST['logo_aliasname']) ? $_POST['logo_aliasname'] : '';
+        $logo_filename = isset($_POST['logo_filename']) ? $_POST['logo_filename'] : '';
+        $logo_link = isset($_POST['logo_link']) ? $_POST['logo_link'] : '';
+        $logo_name = isset($_POST['logo_name']) ? $_POST['logo_name'] : '';
+        $logo_language = isset($_POST['logo_language']) ? $_POST['logo_language'] : '';
+        $logo_orders = isset($_POST['logo_orders']) ? $_POST['logo_orders'] : '';
+        if($logo_aliasname){
+            foreach ($logo_aliasname as $key => $value) {
+                array_push($arr_logo, array('filename' => $logo_filename[$key], 'aliasname' => $value,'name' => $logo_name[$key], 'link' => $logo_link[$key], 'orders' => $logo_orders[$key],'language' => $logo_language[$key]));
+            }
+        }
+        $arr_logo = sort_array_1($arr_logo, 'orders', SORT_ASC);
+
+        $arr_icon = array();
+        $icon_aliasname = isset($_POST['icon_aliasname']) ? $_POST['icon_aliasname'] : '';
+        $icon_filename = isset($_POST['icon_filename']) ? $_POST['icon_filename'] : '';
+        $icon_link = isset($_POST['icon_link']) ? $_POST['icon_link'] : '';
+        $icon_name = isset($_POST['icon_name']) ? $_POST['icon_name'] : '';
+        $icon_language = isset($_POST['icon_language']) ? $_POST['icon_language'] : '';
+        $icon_orders = isset($_POST['icon_orders']) ? $_POST['icon_orders'] : '';
+        if($icon_aliasname){
+            foreach ($icon_aliasname as $key => $value) {
+                array_push($arr_icon, array('filename' => $icon_filename[$key], 'aliasname' => $value,'name' => $icon_name[$key], 'link' => $icon_link[$key], 'orders' => $icon_orders[$key],'language' => $icon_language[$key]));
+            }
+        }
+        $arr_icon = sort_array_1($arr_icon, 'orders', SORT_ASC);
+        $arr_background = array();
+        $background_aliasname = isset($_POST['background_aliasname']) ? $_POST['background_aliasname'] : '';
+        $background_filename = isset($_POST['background_filename']) ? $_POST['background_filename'] : '';
+        $background_link = isset($_POST['background_link']) ? $_POST['background_link'] : '';
+        $background_name = isset($_POST['background_name']) ? $_POST['background_name'] : '';
+        $background_language = isset($_POST['background_language']) ? $_POST['background_language'] : '';
+        $background_orders = isset($_POST['background_orders']) ? $_POST['background_orders'] : '';
+        if($background_aliasname){
+            foreach ($background_aliasname as $key => $value) {
+                array_push($arr_background, array('filename' => $background_filename[$key], 'aliasname' => $value,'name' => $background_name[$key], 'link' => $background_link[$key], 'orders' => $background_orders[$key],'language' => $background_language[$key]));
+            }
+        }
+        $arr_background = sort_array_1($arr_background, 'orders', SORT_ASC);
+        $hub->logo = $arr_logo;
         $hub->banner = $arr_banner;
+        $hub->icon = $arr_icon;
+        $hub->background = $arr_background;
         if($hub->edit_banner()) transfers_to('hub.html?msg=Lưu Banner thành công');
     }
 }
@@ -48,6 +91,48 @@ if(isset($_POST['submit'])){
                 <h4 class="panel-title"><i class="fa fa-gears"></i> Banner</h4>
             </div>
             <div class="panel-body">
+                <div class="form-group">
+                    <label class="col-md-3 control-label">Chọn hình ảnh LOGO</label>
+                    <div class="col-md-3">
+                        <span class="btn btn-primary fileinput-button">
+                            <i class="fa fa-file-image-o"></i>
+                            <span>Chọn hình Banner tốt nhất (477px x 140px)...</span>
+                            <input type="file" name="logo_files[]" multiple class="logo_dinhkem">
+                        </span>
+                    </div>
+                </div>
+                <div id="logo_list">
+                <?php
+                if(isset($t['logo']) && $t['logo']){
+                    foreach($t['logo'] as $l){
+                        $orders = isset($l['orders']) ? $l['orders'] : 0;
+                        $name = isset($l['name']) ? $l['name'] : '';
+                        $language = isset($l['language']) ? $l['language'] : '';
+                        echo '<div class="items form-group">';
+                        echo '<div class="col-md-1">
+                            <input type="number" class="form-control" name="logo_orders[]" value="'.$orders.'" />
+                          </div>';
+                        echo '<div class="col-md-1">';
+                        if($language_list){
+                            echo '<select name="logo_language[]" class="form-control">';
+                            foreach($language_list as $lang){
+                                echo '<option value="'.$lang['code'].'"'.($lang['code']==$language ? ' selected' : '').'>'.$lang['code'].'</option>';
+                            }
+                            echo '</select>';
+                        }
+                        echo '</div>';
+                        echo '<div class="col-md-3"><input type="text" name="logo_name[]" class="form-control" placeholder="Tên" value="'.$name.'"></div>';
+                        echo '<div class="col-md-4"><input type="text" name="logo_link[]" value="'.$l['link'].'" class="form-control" placeholder="Liên kết"></div>';
+                        echo '<div class="col-md-3">';
+                        echo '<div class="input-group">
+                                <input type="hidden" class="form-control" name="logo_aliasname[]" value="'.$l['aliasname'].'" readonly/>
+                                <input type="text" class="form-control" name="logo_filename[]" value="'.$l['filename'].'" readonly/>
+                                <span class="input-group-addon"><a href="get.xoabanner_hub.html?filename='.$l['aliasname'].'" onclick="return false;" class="delete_file"><i class="fa fa-trash"></i></a></span>
+                            </div></div></div>';
+                    }
+                }
+                ?>
+                </div>
             	<div class="form-group">
                     <label class="col-md-3 control-label">Chọn hình ảnh BANNER (Slider)</label>
                     <div class="col-md-3">
@@ -92,6 +177,92 @@ if(isset($_POST['submit'])){
                 }
                 ?>
                 </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label">Chọn hình ảnh ICON</label>
+                    <div class="col-md-3">
+                        <span class="btn btn-primary fileinput-button">
+                            <i class="fa fa-file-image-o"></i>
+                            <span>Chọn hình icon tốt nhất (305px x 305x)...</span>
+                            <input type="file" name="icon_files[]" multiple class="icon_dinhkem">
+                        </span>
+                    </div>
+                </div>
+                <div id="icon_list">
+                <?php
+                if(isset($t['icon']) && $t['icon']){
+                    foreach($t['icon'] as $ic){
+                        $orders = isset($ic['orders']) ? $ic['orders'] : 0;
+                        $name = isset($ic['name']) ? $ic['name'] : '';
+                        $address = isset($ic['address']) ? $ic['address'] : '';
+                        $language = isset($ic['language']) ? $ic['language'] : '';
+                        echo '<div class="items form-group">';
+                        echo '<div class="col-md-1">
+                            <input type="number" class="form-control" name="icon_orders[]" value="'.$orders.'" />
+                          </div>';
+                        echo '<div class="col-md-1">';
+                        if($language_list){
+                            echo '<select name="icon_language[]" class="form-control">';
+                            foreach($language_list as $lang){
+                                echo '<option value="'.$lang['code'].'"'.($lang['code']==$language ? ' selected' : '').'>'.$lang['code'].'</option>';
+                            }
+                            echo '</select>';
+                        }
+                        echo '</div>';
+                        echo '<div class="col-md-3"><input type="text" name="icon_name[]" class="form-control" placeholder="Tên" value="'.$name.'"></div>';
+                        echo '<div class="col-md-4"><input type="text" name="icon_link[]" value="'.$ic['link'].'" class="form-control" placeholder="Liên kết"></div>';
+                        echo '<div class="col-md-3">';
+                        echo '<div class="input-group">
+                                <input type="hidden" class="form-control" name="icon_aliasname[]" value="'.$ic['aliasname'].'" readonly/>
+                                <input type="text" class="form-control" name="icon_filename[]" value="'.$ic['filename'].'" readonly/>
+                                <span class="input-group-addon"><a href="get.xoabanner_hub.html?filename='.$ic['aliasname'].'" onclick="return false;" class="delete_file"><i class="fa fa-trash"></i></a></span>
+                            </div></div></div>';
+                    }
+                }
+                ?>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label">Chọn hình ảnh BACKGROUND</label>
+                    <div class="col-md-3">
+                        <span class="btn btn-primary fileinput-button">
+                            <i class="fa fa-file-image-o"></i>
+                            <span>Chọn hình background tốt nhất (1600px x 1200x)...</span>
+                            <input type="file" name="background_files[]" multiple class="background_dinhkem">
+                        </span>
+                    </div>
+                </div>
+                <div id="background_list">
+                <?php
+                if(isset($t['background']) && $t['background']){
+                    foreach($t['background'] as $background){
+                        $orders = isset($background['orders']) ? $background['orders'] : 0;
+                        $name = isset($background['name']) ? $background['name'] : '';
+                        $address = isset($background['address']) ? $background['address'] : '';
+                        $language = isset($background['language']) ? $background['language'] : '';
+                        echo '<div class="items form-group">';
+                        echo '<div class="col-md-1">
+                            <input type="number" class="form-control" name="background_orders[]" value="'.$orders.'" />
+                          </div>';
+                        echo '<div class="col-md-1">';
+                        if($language_list){
+                            echo '<select name="background_language[]" class="form-control">';
+                            foreach($language_list as $lang){
+                                echo '<option value="'.$lang['code'].'"'.($lang['code']==$language ? ' selected' : '').'>'.$lang['code'].'</option>';
+                            }
+                            echo '</select>';
+                        }
+                        echo '</div>';
+                        echo '<div class="col-md-3"><input type="text" name="background_name[]" class="form-control" placeholder="Tên" value="'.$name.'"></div>';
+                        echo '<div class="col-md-4"><input type="text" name="background_link[]" value="'.$background['link'].'" class="form-control" placeholder="Liên kết"></div>';
+                        echo '<div class="col-md-3">';
+                        echo '<div class="input-group">
+                                <input type="hidden" class="form-control" name="background_aliasname[]" value="'.$background['aliasname'].'" readonly/>
+                                <input type="text" class="form-control" name="background_filename[]" value="'.$background['filename'].'" readonly/>
+                                <span class="input-group-addon"><a href="get.xoabanner_hub.html?filename='.$background['aliasname'].'" onclick="return false;" class="delete_file"><i class="fa fa-trash"></i></a></span>
+                            </div></div></div>';
+                    }
+                }
+                ?>
+                </div>
             </div>
             <div class="modal-footer">
                 <button type="submit" name="submit" id="submit" class="btn btn-primary"><i class="fa fa-check-circle-o"></i> Lưu</button>
@@ -110,7 +281,7 @@ if(isset($_POST['submit'])){
 <!-- ================== END PAGE LEVEL JS ================== -->
 <script>
     $(document).ready(function() {
-        upload_banner();delete_file();
+        upload_banner();upload_logo();upload_icon();upload_background();delete_file();
         <?php if(isset($msg) && $msg) : ?>
         $.gritter.add({
             title:"Thông báo !",

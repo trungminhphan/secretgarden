@@ -4,7 +4,7 @@ class Hub {
 	private $_mongo;
 	private $_collection;
 
-	public $id = '5996dfce7247aeb00f00002c';
+	public $id = '59a2ce10d89398c80c000029';
 	public $logo = array();
 	public $banner = array(); //array('orders' 'name', 'address', link, hinhanh);
 	public $icon = array();
