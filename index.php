@@ -79,11 +79,14 @@ if(!$background) $background = 'assets/images/bg.jpg';
   <body>
     <div id="pagewrap" class="pagewrap">
       <div id="html-content" class="wrapper-content">
-        <section class="featured-section padding-bottom-100" style="background:url(<?php echo $background; ?>); background-size:cover;padding-top:10px;">
+        <section class="featured-section padding-bottom-100" style="background:url(<?php echo $background; ?>); padding-top:10px; height:100vh;background-size: cover;">
             <div class="container" style="padding:0px;">
               <div class="row">
                 <div class="col-md-12">
                   <div class="swin-sc swin-sc-title">
+                    <?php if($users->isLoggedIn() && $users->is_admin()): ?>
+                      <a href="admin/hub.html?url=<?php echo $_SERVER['REQUEST_URI']; ?>" class="edit-icon" title="Edit Logo" alt="Edit Logo"><i class="fa fa-pencil-square"></i></a>
+                    <?php endif; ?>
                     <img src="<?php echo $logo; ?>" alt="Secret Garden" style="width:350px;">
                   </div>
                   <div class="row">
@@ -99,7 +102,7 @@ if(!$background) $background = 'assets/images/bg.jpg';
                               echo '<li data-target="#myCarousel" data-slide-to="'.$i.'" '.($i == 0 ? 'class="active"' : '').'></li>';
                               $i++;
                             }
-                          }                          
+                          }
                         ?>
                         </ol>
                         <div class="carousel-inner">
@@ -129,7 +132,7 @@ if(!$background) $background = 'assets/images/bg.jpg';
                   </div>
                   <?php if(isset($t['icon']) && $t['icon']): ?>
                   <div class="row">
-                    <div class="col-md-12" style="margin-left:1%;">
+                    <div class="col-md-12">
                       <?php
                       $i=1;
                       foreach($t['icon'] as $key => $value){

@@ -17,3 +17,13 @@ mongoexport --db secretgarden_1 --collection sessions --out sessions_1.json
 mongoexport --db secretgarden_1 --collection translate_path --out translate_path_1.json
 mongoexport --db secretgarden_1 --collection translate_var --out translate_var_1.json
 mongoexport --db secretgarden_1 --collection users --out users_1.json
+
+mongoexport --db secretgarden_2 --collection fs.chunks --out fs.chunks_2.json
+mongoexport --db secretgarden_2 --collection fs.files --out fs.files_2.json
+mongoexport --db secretgarden_2 --collection hub --out hub_2.json
+mongoexport --db secretgarden_2 --collection languages --out languages_2.json
+mongoexport --db secretgarden_2 --collection menu --out menu_2.json
+mongoexport --db secretgarden_2 --collection sessions --out sessions_2.json
+mongoexport --db secretgarden_2 --collection translate_path --out translate_path_2.json
+mongoexport --db secretgarden_2 --collection translate_var --out translate_var_2.json
+mongoexport --db secretgarden_2 --collection users --out users_2.json
