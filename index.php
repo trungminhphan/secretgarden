@@ -79,7 +79,7 @@ if(!$background) $background = 'assets/images/bg.jpg';
   <body>
     <div id="pagewrap" class="pagewrap">
       <div id="html-content" class="wrapper-content">
-        <section class="featured-section padding-bottom-100" style="background:url(<?php echo $background; ?>); padding-top:10px; height:100vh;background-size: cover;">
+        <section class="featured-section padding-bottom-100" style="background:url(<?php echo $background; ?>); padding-top:10px; min-height:100vh;background-size: cover;">
             <div class="container" style="padding:0px;">
               <div class="row">
                 <div class="col-md-12">
