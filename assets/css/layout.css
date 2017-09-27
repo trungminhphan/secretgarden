@@ -1241,9 +1241,24 @@ header.header-fixed {
   transition: all 200ms ease-in;
   transform: scale(1);
   text-align: center;
-  margin-top: 2.5%;
-  padding:5px;
+  /*margin-top: 2.5%;*/
+  padding:10px;
 }
+.hub-icon-text{
+  display:inline-block;
+  padding:  0px;
+  margin:  0px;
+  color:  #fff;
+  width: 20%;
+  float: left;
+  text-align: center;
+}
+.hub-icon-text p{
+  padding: 0px;
+  margin: 0px;  
+  text-align: center;
+}
+/*
 .hub-icon:hover{
   border: 0px;padding:0px;
   box-shadow:  0 0 10px 5px #fbfbb7;
@@ -1261,7 +1276,7 @@ header.header-fixed {
   transition: all 200ms ease-in;
   transform: scale(1.2);
   cursor: pointer;
-}
+}*/
 
 .edit-icon {
   position: absolute;

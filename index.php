@@ -83,12 +83,12 @@ if(!$background) $background = 'assets/images/bg.jpg';
             <div class="container" style="padding:0px;">
               <div class="row">
                 <div class="col-md-12">
-                  <div class="swin-sc swin-sc-title">
-                    <?php if($users->isLoggedIn() && $users->is_admin()): ?>
-                      <a href="admin/hub.html?url=<?php echo $_SERVER['REQUEST_URI']; ?>" class="edit-icon" title="Edit Logo" alt="Edit Logo"><i class="fa fa-pencil-square"></i></a>
-                    <?php endif; ?>
-                    <img src="<?php echo $logo; ?>" alt="Secret Garden" style="width:350px;">
-                  </div>
+                  <!--<div class="swin-sc swin-sc-title">
+                    <?php //if($users->isLoggedIn() && $users->is_admin()): ?>
+                      <a href="admin/hub.html?url=<?php //echo $_SERVER['REQUEST_URI']; ?>" class="edit-icon" title="Edit Logo" alt="Edit Logo"><i class="fa fa-pencil-square"></i></a>
+                    <?php //endif; ?>
+                    <img src="<?php //echo $logo; ?>" alt="Secret Garden" style="width:350px;">
+                  </div>-->
                   <div class="row">
                     <div class="col-md-12">
                       <!--<img src="assets/images/banner.png" width="100%" />-->
@@ -130,6 +130,11 @@ if(!$background) $background = 'assets/images/bg.jpg';
                     <?php endif; ?>
                     </div>
                   </div>
+                  <div class="row" style="padding: 20px;">
+                      <div class="col-md-12">
+                          <img src="assets/images/service.png" style="width:100%;" />
+                      </div>
+                  </div>
                   <?php if(isset($t['icon']) && $t['icon']): ?>
                   <div class="row">
                     <div class="col-md-12">
@@ -139,7 +144,7 @@ if(!$background) $background = 'assets/images/bg.jpg';
                         if($value['language'] == $lang){
                           echo '<div class="hub-icon hub-icon-'.$i.'">
                           <a href="'.$value['link'].'">
-                            <img src="'.$target_images.$value['aliasname'].'" width="100%" />
+                            <img src="'.$target_images.$value['aliasname'].'" width="80%" />
                           </a>
                           </div>';
                           $i++;
@@ -149,66 +154,31 @@ if(!$background) $background = 'assets/images/bg.jpg';
                     </div>
                   </div>
                   <?php endif; ?>
-                  <!--<div class="row">
-                    <div class="col-md-4 col-sm-6 col-xs-12">
-                      <div class="swin-sc sc-featured-box item wow fadeInUp"><img src="assets/images/featured-box-bg-1.jpg" alt="fooday" class="box-bg">
-                        <div class="box-inner">
-                          <h4 class="box-title">Secret Garden 1</h4>
-                          <div class="box-content">Top Floor, 158 Pasteur, Bến Nghé, Quận 1, Hồ Chí Minh</div>
-                          <div class="btn-wrap text-center"><a href="sg1/" class="btn swin-btn"><span>Go to</span></a></div>
-                          <div class="showcase"">
-                            <img src="assets/images/bg-hub1.png" alt="" class="img-responsive img-showcase">
-                          </div>
+                  <div class="row">
+                      <div class="col-md-12">
+                        <div class="hub-icon-text">
+                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
+                        </div>
+                        <div class="hub-icon-text">
+                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
+                        </div>
+                        <div class="hub-icon-text">
+                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
+                        </div>
+                        <div class="hub-icon-text">
+                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
+                        </div>
+                        <div class="hub-icon-text">
+                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
                         </div>
                       </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6 col-xs-12">
-                      <div data-wow-delay="0.5s" class="swin-sc sc-featured-box item wow fadeInUp"><img src="assets/images/featured-box-bg-1.jpg" alt="fooday" class="box-bg">
-                        <div class="box-inner">
-                          <h4 class="box-title">Secret Garden 2</h4>
-                          <div class="box-content">Top Floor, 158 Pasteur, Bến Nghé, Quận 1, Hồ Chí Minh</div>
-                          <div class="btn-wrap text-center"><a href="sg2/" class="btn swin-btn"><span>Go to</span></a></div>
-                          <div class="showcase">
-                            <img src="assets/images/bg-hub2.png" alt="" class="img-responsive img-showcase">
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6 col-xs-12">
-                      <div data-wow-delay="1s" class="swin-sc sc-featured-box item wow fadeInUp"><img src="assets/images/featured-box-bg-1.jpg" alt="fooday" class="box-bg">
-                        <div class="box-inner">
-                          <h4 class="box-title">Secret Garden 3</h4>
-                          <div class="box-content">Top Floor, 158 Pasteur, Bến Nghé, Quận 1, Hồ Chí Minh</div>
-                          <div class="btn-wrap text-center"><a href="sg3/" class="btn swin-btn"><span>Go to</span></a></div>
-                          <div class="showcase"><img src="assets/images/bg-hub3.png" alt="" class="img-responsive img-showcase"></div>
-                        </div>
-                      </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12" style="text-align:center;padding-top:50px;">
+                      <img src="assets/images/copyright.png" alt="" align="center">
                     </div>
                   </div>
-                  <div class="row" style="margin-top:10px; ">
-                    <div class="col-md-2"></div>
-                    <div class="col-md-4 col-sm-6 col-xs-12">
-                      <div data-wow-delay="1s" class="swin-sc sc-featured-box item wow fadeInUp"><img src="assets/images/featured-box-bg-1.jpg" alt="fooday" class="box-bg">
-                        <div class="box-inner">
-                          <h4 class="box-title">Secret Garden 4</h4>
-                          <div class="box-content">Top Floor, 158 Pasteur, Bến Nghé, Quận 1, Hồ Chí Minh</div>
-                          <div class="btn-wrap text-center"><a href="sg4/" class="btn swin-btn"><span>Go to</span></a></div>
-                          <div class="showcase"><img src="assets/images/bg-hub4.png" alt="" class="img-responsive img-showcase"></div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6 col-xs-12">
-                      <div data-wow-delay="1s" class="swin-sc sc-featured-box item wow fadeInUp"><img src="assets/images/featured-box-bg-1.jpg" alt="fooday" class="box-bg">
-                        <div class="box-inner">
-                          <h4 class="box-title">Secret Garden 5</h4>
-                          <div class="box-content">Top Floor, 158 Pasteur, Bến Nghé, Quận 1, Hồ Chí Minh</div>
-                          <div class="btn-wrap text-center"><a href="sg/5" class="btn swin-btn"><span>Go to</span></a></div>
-                          <div class="showcase"><img src="assets/images/hub-1.png" alt="" class="img-responsive img-showcase">
-                          </div>
-                        </div>
-                      </div>
-                    </div>-->
-                    <div class="col-md-2"></div>
+                  <div class="col-md-2"></div>
                   </div>
                 </div>
               </div>
