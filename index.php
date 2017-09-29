@@ -80,9 +80,9 @@ if(!$background) $background = 'assets/images/bg.jpg';
     <div id="pagewrap" class="pagewrap">
       <div id="html-content" class="wrapper-content">
         <section class="featured-section padding-bottom-100" style="background:url(<?php echo $background; ?>); padding-top:10px; min-height:100vh;background-size: cover;">
-            <div class="container" style="padding:0px;">
+            <div class="container" style="margin:0px !important; padding:0px !important;width:100%;">
               <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-12" >
                   <!--<div class="swin-sc swin-sc-title">
                     <?php //if($users->isLoggedIn() && $users->is_admin()): ?>
                       <a href="admin/hub.html?url=<?php //echo $_SERVER['REQUEST_URI']; ?>" class="edit-icon" title="Edit Logo" alt="Edit Logo"><i class="fa fa-pencil-square"></i></a>
