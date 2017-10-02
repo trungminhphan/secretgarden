@@ -179,8 +179,9 @@ if(!$background) $background = 'assets/images/bg.jpg';
                   </div>
                   <div class="row">
                     <div class="col-md-12 copyright" style="text-align:center;padding-top:50px;">
-                      <p>Copyright &copy; 2017 by SecretGarden Group <br />
-                      Designed by JAYbranding - <a href="mailto:info@jaybranding.com">info@jaybranding.com</a> - 0989 971131</p>
+                      <p>Copyright &copy; 2017 by SecretGarden Group
+                      <!--<br />
+                      Designed by JAYbranding - <a href="mailto:info@jaybranding.com">info@jaybranding.com</a> - 0989 971131--></p>
                     </div>
                   </div>
                   <div class="col-md-2"></div>
