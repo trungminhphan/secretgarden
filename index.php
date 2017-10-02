@@ -43,7 +43,11 @@ if(!$background) $background = 'assets/images/bg.jpg';
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>SECRECT GARDEN</title>
+    <title>Secret Garden Group Vietnam</title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+    <meta name="title" content="Secret Garden Group Vietnam"/>
+    <meta name="description" content="Hệ thống nhà hàng Secret Garden, Mountain Retrear, Ngọc Châu Garden, Secret House, The Huế House tại Sài Gòn, TPHCM, Việt Nam" />
+    <meta name="keywords" content="Secret Garden restaurant, Mountain Retreat restaurant, Ngoc Chau garden Vietnamese restaurant, Secret House Restaurant, The Hue House restaurant." />
     <!-- Bootstrap CSS-->
     <link href="assets/vendors/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome-->
@@ -77,12 +81,12 @@ if(!$background) $background = 'assets/images/bg.jpg';
     <script src="assets/vendors/pageloading/sidebartransition/js/modernizr.custom.js"></script>
   </head>
   <body>
-    <div id="pagewrap" class="pagewrap">
+    <div id="pagewrap" class="pagewrap" >
       <div id="html-content" class="wrapper-content">
-        <section class="featured-section padding-bottom-100" style="background:url(<?php echo $background; ?>); padding-top:10px; min-height:100vh;background-size: cover;">
-            <div class="container" style="padding:0px;">
+        <section class="featured-section padding-bottom-100" style="background:url(<?php echo $background; ?>); padding-top:0px; min-height:100vh;background-size: cover;">
+            <div class="container" style="margin:0px !important; padding:0px !important;width:100%;">
               <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-12" >
                   <!--<div class="swin-sc swin-sc-title">
                     <?php //if($users->isLoggedIn() && $users->is_admin()): ?>
                       <a href="admin/hub.html?url=<?php //echo $_SERVER['REQUEST_URI']; ?>" class="edit-icon" title="Edit Logo" alt="Edit Logo"><i class="fa fa-pencil-square"></i></a>
@@ -174,8 +178,9 @@ if(!$background) $background = 'assets/images/bg.jpg';
                       </div>
                   </div>
                   <div class="row">
-                    <div class="col-md-12" style="text-align:center;padding-top:50px;">
-                      <img src="assets/images/copyright.png" alt="" align="center">
+                    <div class="col-md-12 copyright" style="text-align:center;padding-top:50px;">
+                      <p>Copyright &copy; 2017 by SecretGarden Group <br />
+                      Designed by JAYbranding - <a href="mailto:info@jaybranding.com">info@jaybranding.com</a> - 0989 971131</p>
                     </div>
                   </div>
                   <div class="col-md-2"></div>

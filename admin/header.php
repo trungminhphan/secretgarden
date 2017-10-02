@@ -19,10 +19,11 @@ if($users->isLoggedIn() && !$users->is_admin() && !$users->is_manager()){
 <!--<![endif]-->
 <head>
 	<meta charset="utf-8" />
-	<title>SECRET GARDEN</title>
+	<title>Secret Garden Group Vietnam</title>
 	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
-    <meta content="SECRET GARDEN" />
-    <meta content="SECRET GARDEN" />
+	<meta name="title" content="Secret Garden Group Vietnam"/>
+	<meta name="description" content="Hệ thống nhà hàng Secret Garden, Mountain Retrear, Ngọc Châu Garden, Secret House, The Huế House tại Sài Gòn, TPHCM, Việt Nam" />
+	<meta name="keywords" content="Secret Garden restaurant, Mountain Retreat restaurant, Ngoc Chau garden Vietnamese restaurant, Secret House Restaurant, The Hue House restaurant." />
 	<!-- ================== BEGIN BASE CSS STYLE ================== -->
 	<!--<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">-->
 	<link href="assets/plugins/jquery-ui/themes/base/minified/jquery-ui.min.css" rel="stylesheet" />

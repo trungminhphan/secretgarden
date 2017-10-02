@@ -79,13 +79,13 @@ This file include css code for widget, element in sidebar and footer
     -webkit-transition: all 0.3s ease; }
   .widget-categories .link:hover {
     padding-left: 15px;
-    color: #28A99F; }
+    color: #294b3a; }
     .widget-categories .link:hover .badge {
-      color: #28A99F; }
+      color: #294b3a; }
   .widget-categories .link:before {
     content: '';
     position: absolute;
-    background-color: #28A99F;
+    background-color: #294b3a;
     width: 5px;
     height: 5px;
     border-radius: 50%;
@@ -112,7 +112,7 @@ This file include css code for widget, element in sidebar and footer
   line-height: 26px;
   display: inline-block; }
   .widget-recent-post .swin-media .heading:hover {
-    color: #28A99F; }
+    color: #294b3a; }
 
 .widget-recent-post .swin-media .info {
   color: #616f7d;
@@ -125,7 +125,7 @@ This file include css code for widget, element in sidebar and footer
   display: inline-block;
   margin: 14px 0; }
   .widget-tag ul li:hover a {
-    color: #28A99F;
+    color: #294b3a;
     box-shadow: 0 2px 21px rgba(0, 0, 0, 0.2); }
   .widget-tag ul li a {
     text-transform: capitalize;
@@ -139,7 +139,7 @@ This file include css code for widget, element in sidebar and footer
   width: 15px;
   margin: 0; }
   .widget-gallery.carousel .slick-dots li button:before {
-    color: #28A99F; }
+    color: #294b3a; }
 
 .widget-gallery.carousel .slick-dots li.active button:before {
   opacity: 1; }

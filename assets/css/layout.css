@@ -388,11 +388,11 @@ header {
     margin: 0; }
 
 .header-transparent .header-top.top-layout-02 {
-  background-color: #28A99F;/*rgba(241, 95, 42, 0.8);*/ }
+  background-color: #294b3a;/*rgba(241, 95, 42, 0.8);*/ }
 
 .header-top.top-layout-02 {
   color: #fff;
-  background-color: #28A99F;
+  background-color: #294b3a;
   border: none; }
   .header-top.top-layout-02 a {
     color: #ffffff; }
@@ -462,7 +462,7 @@ header.header-fixed .header-top {
       width: 0;
       top: 50%;
       margin-top: 15px;
-      background-color: #28A99F;
+      background-color: #294b3a;
       -ms-transition: all 0.3s ease;
       -webkit-transition: all 0.3s ease;
       transition: all 0.3s ease; }
@@ -918,7 +918,7 @@ header.header-fixed {
       box-shadow: none;
       border: none; }
     .subscribe-wrapper .widget-newsletter i {
-      color: #28A99F; }
+      color: #294b3a; }
     .subscribe-wrapper .widget-newsletter .submit {
       position: absolute;
       top: 0;
@@ -966,7 +966,7 @@ header.header-fixed {
     width: 80px;
     height: 80px;
     border-radius: 50%;
-    background-color: #28A99F;
+    background-color: #294b3a;
     border: 3px solid #fff;
     color: #fff;
     text-align: center;
@@ -1040,7 +1040,7 @@ header.header-fixed {
     .product-single .product-summary .product-share .socials li a {
       background-color: #ededed; }
       .product-single .product-summary .product-share .socials li a:hover {
-        background-color: #28A99F; }
+        background-color: #294b3a; }
 
 .product-single #reviews .product-reviews-title {
   margin-bottom: 40px; }
@@ -1058,7 +1058,7 @@ header.header-fixed {
   margin-left: 80px; }
 
 .product-single #reviews .comment_container .star-rating i {
-  color: #28A99F; }
+  color: #294b3a; }
   .product-single #reviews .comment_container .star-rating i.fa-star-o {
     color: #616f7d; }
 
@@ -1084,7 +1084,7 @@ header.header-fixed {
     .blog-footer .blog-share .socials li a i {
       color: #a2a2a2; }
     .blog-footer .blog-share .socials li a:hover {
-      background-color: #28A99F; }
+      background-color: #294b3a; }
       .blog-footer .blog-share .socials li a:hover i {
         color: #fff; }
 
@@ -1097,7 +1097,7 @@ header.header-fixed {
     font-weight: 300;
     font-style: italic; }
     .blog-footer .blog-tags a:hover {
-      color: #28A99F; }
+      color: #294b3a; }
 
 .blog-navigation {
   position: relative;
@@ -1115,7 +1115,7 @@ header.header-fixed {
       color: #616f7d;
       font-weight: 700; }
       .blog-navigation .navi-item a:hover {
-        color: #28A99F; }
+        color: #294b3a; }
       .blog-navigation .navi-item a i {
         font-size: 12px;
         margin: 7px 10px; }
@@ -1173,14 +1173,14 @@ header.header-fixed {
       width: 1px;
       background-color: #cccccc; }
   .blog-comment .comment-item .comment-reply a {
-    color: #28A99F;
+    color: #294b3a;
     opacity: 0.8; }
     .blog-comment .comment-item .comment-reply a:hover {
       opacity: 1; }
   .blog-comment .comment-item .comment-reply i {
     font-size: 12px;
     margin-right: 5px;
-    color: #28A99F; }
+    color: #294b3a; }
 
 .blog-comment .comment-form {
   margin-top: 70px; }
@@ -1281,4 +1281,17 @@ header.header-fixed {
 .edit-icon {
   position: absolute;
   right: 0px; font-size: 30px; color:#fff;
+}
+
+.copyright p{
+  font-size:  13px;
+  font-family: Tahoma;
+  padding:  0px;
+  margin: 0px;
+  line-height: 17px;
+  color: #818281 !important;
+}
+.copyright p a{
+  color: #818281 !important;
+  text-decoration: underline;
 }
