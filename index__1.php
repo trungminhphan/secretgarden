@@ -81,113 +81,12 @@ if(!$background) $background = 'assets/images/bg.jpg';
     <script src="assets/vendors/pageloading/sidebartransition/js/modernizr.custom.js"></script>
   </head>
   <body>
-    <div id="pagewrap" class="pagewrap" >
+    <div id="pagewrap" class="pagewrap" style="background:#294b37;">
       <div id="html-content" class="wrapper-content">
-        <section class="featured-section padding-bottom-100" style="background:url(<?php echo $background; ?>); padding-top:0px; min-height:100vh;background-size: cover;">
-            <div class="container" style="margin:0px !important; padding:0px !important;width:100%;">
-              <div class="row">
-                <div class="col-md-12" >
-                  <!--<div class="swin-sc swin-sc-title">
-                    <?php //if($users->isLoggedIn() && $users->is_admin()): ?>
-                      <a href="admin/hub.html?url=<?php //echo $_SERVER['REQUEST_URI']; ?>" class="edit-icon" title="Edit Logo" alt="Edit Logo"><i class="fa fa-pencil-square"></i></a>
-                    <?php //endif; ?>
-                    <img src="<?php //echo $logo; ?>" alt="Secret Garden" style="width:350px;">
-                  </div>-->
-                  <div class="row">
-                    <div class="col-md-12">
-                      <!--<img src="assets/images/banner.png" width="100%" />-->
-                      <?php if(isset($t['banner']) && $t['banner']) : ?>
-                      <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                        <ol class="carousel-indicators">
-                        <?php
-                          $i = 0;
-                          foreach($t['banner'] as $b){
-                            if($b['language'] == $lang){
-                              echo '<li data-target="#myCarousel" data-slide-to="'.$i.'" '.($i == 0 ? 'class="active"' : '').'></li>';
-                              $i++;
-                            }
-                          }
-                        ?>
-                        </ol>
-                        <div class="carousel-inner">
-                        <?php
-                        $i=0;
-                        foreach($t['banner'] as $key => $value){
-                          if($value['language'] == $lang){
-                            echo '<div class="item '.($i == 0? 'active' : '').'">
-                              <img src="'.$target_images.$value['aliasname'].'" alt="'.$value['name'].'" style="width:100%;">
-                            </div>';$i++;
-                          }
-                        }
-                        ?>
-                        </div>
-                         <!-- Left and right controls -->
-                        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-                          <span class="glyphicon glyphicon-chevron-left"></span>
-                          <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="right carousel-control" href="#myCarousel" data-slide="next">
-                          <span class="glyphicon glyphicon-chevron-right"></span>
-                          <span class="sr-only">Next</span>
-                        </a>
-                      </div>
-                    <?php endif; ?>
-                    </div>
-                  </div>
-                  <div class="row" style="padding: 20px;">
-                      <div class="col-md-12">
-                          <img src="assets/images/service.png" style="width:100%;" />
-                      </div>
-                  </div>
-                  <?php if(isset($t['icon']) && $t['icon']): ?>
-                  <div class="row">
-                    <div class="col-md-12">
-                      <?php
-                      $i=1;
-                      foreach($t['icon'] as $key => $value){
-                        if($value['language'] == $lang){
-                          echo '<div class="hub-icon hub-icon-'.$i.'">
-                          <a href="'.$value['link'].'">
-                            <img src="'.$target_images.$value['aliasname'].'" width="80%" />
-                          </a>
-                          </div>';
-                          $i++;
-                        }
-                      }
-                      ?>
-                    </div>
-                  </div>
-                  <?php endif; ?>
-                  <div class="row">
-                      <div class="col-md-12">
-                        <div class="hub-icon-text">
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
-                        </div>
-                        <div class="hub-icon-text">
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
-                        </div>
-                        <div class="hub-icon-text">
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
-                        </div>
-                        <div class="hub-icon-text">
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
-                        </div>
-                        <div class="hub-icon-text">
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
-                        </div>
-                      </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-12 copyright" style="text-align:center;padding-top:50px;">
-                      <p>Copyright &copy; 2017 by SecretGarden Group
-                      <!--<br />
-                      Designed by JAYbranding - <a href="mailto:info@jaybranding.com">info@jaybranding.com</a> - 0989 971131--></p>
-                    </div>
-                  </div>
-                  <div class="col-md-2"></div>
-                  </div>
-                </div>
-              </div>
+         <!--style="background:url(<?php //echo $background; ?>); padding-top:0px; min-height:100vh;background-size: cover;"-->
+        <section class="featured-section padding-bottom-100">
+            <div class="container" style="margin:0px !important; padding:0px !important;width:100%;text-align:center;background:#294b37;">
+              <img src="assets/images/hub_1920.png" />
             </div>
           </section>
       </div>
