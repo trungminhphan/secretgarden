@@ -1289,3 +1289,9 @@ header.header-fixed {
   color: #818281 !important;
   text-decoration: underline;
 }
+
+p.title_text {
+  text-align: center;
+  color:#fff;
+  padding-top:20px;
+}

@@ -83,7 +83,7 @@ if(!$background) $background = 'assets/images/bg.jpg';
   <body>
     <div id="pagewrap" class="pagewrap" >
       <div id="html-content" class="wrapper-content">
-        <section class="featured-section padding-bottom-100" style="background:url(<?php echo $background; ?>); padding-top:0px; min-height:100vh;background-size: cover;">
+        <section class="featured-section" style="background:url(<?php echo $background; ?>); padding-top:0px; padding-bottom:20px; width: 100vw;background-size: cover;">
             <div class="container" style="margin:0px !important; padding:0px !important;width:100%;">
               <div class="row">
                 <div class="col-md-12" >
@@ -160,21 +160,10 @@ if(!$background) $background = 'assets/images/bg.jpg';
                   <?php endif; ?>
                   <div class="row">
                       <div class="col-md-12">
-                        <div class="hub-icon-text">
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
-                        </div>
-                        <div class="hub-icon-text">
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
-                        </div>
-                        <div class="hub-icon-text">
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
-                        </div>
-                        <div class="hub-icon-text">
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
-                        </div>
-                        <div class="hub-icon-text">
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
-                        </div>
+                        <p class="title_text">
+                          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla blandit risus in justo tempor faucibus. <br />Donec augue leo, porttitor ut diam a, ullamcorper posuere tortor. <br />
+                          Fusce convallis vehicula auctor. Etiam molestie ipsum et aliquet convallis. In quis ex vitae ex commodo.
+                        </p>
                       </div>
                   </div>
                   <div class="row">
